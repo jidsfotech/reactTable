@@ -1,0 +1,222 @@
+.filterParameters,
+.filterByCategoryOptions  {
+    display: flex;
+    justify-content: space-evenly;
+    background: #243344;
+    border-radius: 10px;
+    color: #EDEEEF;
+    margin-bottom: 1.5rem;
+}
+
+.datePickerWrapper {
+    display: inline-block;
+    padding-left: 30px;
+    width: 25rem;
+
+}
+
+.datepicker-grid-container {
+    display: grid;
+    grid-template-columns: 20rem;
+    grid-template-rows: 1rem 2rem;
+}
+
+.startDate, 
+.endDate,
+.datePickerLabel {
+    display: inline-block;
+}
+
+.datePickerLabel {
+    width: 6rem;
+    margin-left: 0.5rem;
+}
+
+.verticalLine {
+    display: inline-block;
+    width: 3px;
+    height: 1.7rem;
+    background: rgb(219, 214, 214);
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.resetFilter {
+    display: inline-block;
+    width: 12rem;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+.resetFilter_icon {
+    cursor: pointer;
+    color: rgb(219, 214, 214);
+    margin-top: 2rem;
+}
+
+.resetFilter_icon:hover {
+    color:#32E0C4;
+}
+
+.filterBy-RecievedMoney, 
+.filterBy-walletFund, 
+.filterBy-moneySent, 
+.filterBy-pendingTran, 
+.filterBy-failedTran {
+    padding: 1rem
+}
+
+input[type="radio"] {
+    opacity: 0;
+}
+
+input[type="radio"]+label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 25px;
+}
+
+input[type="radio"]+label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    border: 2px solid rgb(231, 231, 231);
+    background: rgb(219, 214, 214);
+}
+
+input[type="radio"]:checked+label::after {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 11px;
+    height: 11px;
+    border-radius: 100%;
+    background: #32E0C4;
+    transform: scale(1);
+    opacity: 1;
+    transition: all .3s ease;
+}
+
+input[type="radio"]:not(:checked)+label::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    background: #fff;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.apply-filter {
+    background: #243344;
+    height: 2rem;
+    margin-bottom: 20px;
+    padding: 8px 8px 10px 10px;
+}
+
+.apply-filter h3,
+.applyFilter-btn {
+    display:inline-block;
+}
+
+.apply-filter h3 {
+    color: #32E0C4;
+}
+
+.applyFilter-btn {
+    float: right;
+    background: #243344;
+    width: 6rem;
+    height: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #32E0C4;
+    border: 2px solid #32E0C4;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.TransactionsTable {
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+}
+
+.TransactionsTable thead tr {
+    background: #243344;
+    line-height: 24px;
+    color: #EDEEEF;
+}
+
+.TransactionsTable thead th {
+    padding: 0.6rem;
+}
+
+.TransactionsTableBody tr:nth-of-type(even) {
+    background: #243344;
+    color: rgb(163, 201, 238)
+}
+
+.TransactionsTableBody tbody tr {
+    border-radius: 10px;
+}
+
+.TransactionsTableBody td {
+    padding: 0.6rem;
+    line-height: 24px;
+}
+
+.transaction-status {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+.TablePagination {
+    margin-top: 1rem;
+    font-size: 12px;
+    color: rgb(144, 142, 142);
+}
+
+.table-pagesIndexing,
+.navigationButtonsContainer {
+    display:inline-block;
+}
+
+.navigationButtonsContainer {
+    float: right;
+    display: flex
+}
+
+.navigationButtonsContainer button,
+.navigationButtonsContainer ul {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    background: white;
+    font-size: 12px;
+    color: rgb(144, 142, 142);
+    list-style-type: none;
+}
+
+.navigationButtonsContainer button:hover,
+.navigationButtonsContainer button:focus {
+    border:0;
+    text-decoration: none;
+    outline: none;
+    color: #32e0c4;
+}
