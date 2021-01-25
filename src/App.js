@@ -8,7 +8,7 @@ const App = () => {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/transactionLogs`)
+        axios.get(`https://my-json-server.typicode.com/jidsfotech/reactTable/transactionLogs`)
             .then((res) => {
                 setData(res.data);
             }).catch((err) => {
