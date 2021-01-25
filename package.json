@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "json-server --watch db.json"
+    "heroku-postbuild": "json-server --watch db.json build"
   },
   "eslintConfig": {
     "extends": [
