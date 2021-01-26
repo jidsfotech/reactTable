@@ -143,13 +143,14 @@ input[type="radio"]:not(:checked)+label::after {
     color: #32E0C4;
     border: 2px solid #32E0C4;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .TransactionsTable {
     width: 100%;
     text-align: left;
     font-size: 14px;
+    overflow: auto;
 }
 
 .TransactionsTable thead tr {
@@ -219,4 +220,47 @@ input[type="radio"]:not(:checked)+label::after {
     text-decoration: none;
     outline: none;
     color: #32e0c4;
+}
+
+/* Media Query */
+@media screen and (max-width: 1040px) {
+
+.filterParameters,
+.filterByCategoryOptions  {
+    flex-direction: column;
+    height: 10rem;
+}
+
+.datePickerWrapper {
+    padding-left: 10px;
+}
+
+.datePickerLabel {
+    margin-left: 5px;
+}
+
+.verticalLine {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.resetFilter {
+    width: 5rem;
+    margin-left: 10px;
+}
+
+.resetFilter_icon {
+    cursor: pointer;
+    color: rgb(219, 214, 214);
+    margin-top: 5px;
+}
+
+.filterBy-RecievedMoney, 
+.filterBy-walletFund, 
+.filterBy-moneySent, 
+.filterBy-pendingTran, 
+.filterBy-failedTran {
+    padding: 5px
+}
+
 }
