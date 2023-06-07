@@ -5,8 +5,12 @@
     align-items: center;
 }
 
-.main > h3 {
+.main>h2 {
     text-align: center;
+    background: #243344;
+    color: #32E0C4;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 .table-wrapper {

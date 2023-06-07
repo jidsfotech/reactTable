@@ -14,7 +14,7 @@ const App = () => {
 
     return (
         <div className="main">
-            <h3> Transactions Logs Table Built with <span style={{ color: 'red' }}>react-table</span> Library</h3>
+            <h2> Transactions Logs Table Built with <span style={{ color: 'white' }}>react-table</span> Library</h2>
             < TransactionsLogTable columns={columns} data={data} />
         </div>
     )
