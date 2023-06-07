@@ -6,8 +6,8 @@ export const columns = [
                     accessor: "date",
                     Cell: (cellProps) => {
                         let date = new Date(cellProps.value).toDateString();
-                        let day = date.split(' ').["2"];
-                        let month = date.split(' ').["1"]
+                        let day = date.split(' ')[2];
+                        let month = date.split(' ')[1]
                         if (day.charAt(0) === '0') {
                             day = day.charAt(1)
                         };

@@ -3,7 +3,7 @@ import DatePicker from "./DatePickerCallendarIcon";
 import { AiOutlineSync, } from "react-icons/ai";
 import { useAsyncDebounce } from "react-table";
 
- const Filters = (props) => {
+const Filters = (props) => {
 
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
@@ -77,22 +77,26 @@ import { useAsyncDebounce } from "react-table";
     }
 
     return (
-        <div>
+        <div className="filters">
             <div className="filterParameters" id="filterParameters">
                 <div className="datePickerWrapper">
-                    <div className="Datepicker-grid-container">
-                        <div>Filter </div>
-                        <div className="startDate">From: <div className="datePickerLabel">{startDate ? startDate.toLocaleDateString("fr-CA") : null}</div>
+                    <div>Filter </div>
+                    <div className="datepicker-grid-container">
+                        <div className="startDate">
+                            From:
+                            <div className="datePickerLabel">{startDate ? startDate.toLocaleDateString("fr-CA") : null}</div>
                             < DatePicker handleDateChange={handleStartDate} date={startDate} />
                         </div>
                         <div className="verticalLine"></div>
-                        <div className="endDate">To: <div className="datePickerLabel">{endDate ? endDate.toLocaleDateString("fr-CA") : null}</div>
+                        <div className="endDate">
+                            To:
+                            <div className="datePickerLabel">{endDate ? endDate.toLocaleDateString("fr-CA") : null}</div>
                             < DatePicker handleDateChange={handleEndDate} date={endDate} />
                         </div>
                     </div>
                 </div>
-                <div className="resetFilter" onClick={autoResetFilter}><span>Reset</span>
-                    <AiOutlineSync className="resetFilter_icon" />
+                <div className="resetFilter" onClick={autoResetFilter}>
+                    Reset <AiOutlineSync className="resetFilter_icon" />
                 </div>
             </div>
             <div className="filterByCategoryOptions" id="filterByCategory">
@@ -114,11 +118,11 @@ import { useAsyncDebounce } from "react-table";
                 </div>
             </div>
             <div className="apply-filter">
-                <h3>All Transactions</h3>
+                <div>All Transactions</div>
                 <button onClick={applyFilter} className="applyFilter-btn" id="applyFilter-btn"> Apply Filte </button>
             </div>
-            <span className="globalFilterInput" >
-                Search:{' '}
+            <form className="globalFilterForm" >
+                <span>Search:{' '}</span>
                 <input
                     type="text"
                     value={value || ""}
@@ -130,10 +134,10 @@ import { useAsyncDebounce } from "react-table";
                     style={{
                         fontSize: '1rem',
                         border: '2px solid #32E0C4',
-                        }}
->
+                    }}
+                >
                 </input>
-            </span>
+            </form>
         </div >
     )
 }

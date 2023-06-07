@@ -10,7 +10,7 @@ import {
 
 const TransactionsLogTable = ({ columns, data }) => {
 
-    const filterTypes = React.useMemo(() => ({
+    const filterTypes = useMemo(() => ({
         dateFilter: (rows, id, filterValue) => {
             return rows = rows.filter(row => {
                 return new Date(row.values.date) >= filterValue[0] && new Date(row.values.date) <= filterValue[1];
@@ -47,7 +47,7 @@ const TransactionsLogTable = ({ columns, data }) => {
         usePagination
     );
     return (
-        <div>
+        <div className="table-wrapper">
            < Filters
                 setFilter={setFilter}
                 preGlobalFilteredRows={preGlobalFilteredRows}

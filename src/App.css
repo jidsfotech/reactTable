@@ -1,69 +1,94 @@
-.filterParameters,
-.filterByCategoryOptions  {
+.main {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main > h3 {
+    text-align: center;
+}
+
+.table-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1rem 1rem;
+}
+
+.filterParameters,
+.filterByCategoryOptions,
+.apply-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: #243344;
     border-radius: 10px;
     color: #EDEEEF;
-    margin-bottom: 1.5rem;
+    padding: 1rem;
 }
 
 .datePickerWrapper {
-    display: inline-block;
-    padding-left: 30px;
-    width: 25rem;
-
+    flex: 1 1 1;
 }
 
 .datepicker-grid-container {
-    display: grid;
-    grid-template-columns: 20rem;
-    grid-template-rows: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
-.startDate, 
-.endDate,
-.datePickerLabel {
-    display: inline-block;
+.startDate,
+.endDate {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+    align-items: center;
 }
 
 .datePickerLabel {
-    width: 6rem;
-    margin-left: 0.5rem;
+    flex: 1 1 1;
+    margin-left: 5px;
 }
 
 .verticalLine {
-    display: inline-block;
     width: 3px;
     height: 1.7rem;
     background: rgb(219, 214, 214);
-    margin-left: 2rem;
-    margin-right: 2rem;
 }
 
 .resetFilter {
-    display: inline-block;
-    width: 12rem;
-    margin-left: 2rem;
     cursor: pointer;
+    flex: 1 1 1;
 }
 
 .resetFilter_icon {
     cursor: pointer;
-    color: rgb(219, 214, 214);
-    margin-top: 2rem;
+    color: hwb(0 84% 14%);
+    height: 0.8rem;
+    font-weight: bold;
+    margin-left: 3px;
 }
 
 .resetFilter_icon:hover {
-    color:#32E0C4;
+    color: #32E0C4;
 }
 
-.filterBy-RecievedMoney, 
-.filterBy-walletFund, 
-.filterBy-moneySent, 
-.filterBy-pendingTran, 
+.filterBy-RecievedMoney,
+.filterBy-walletFund,
+.filterBy-moneySent,
+.filterBy-pendingTran,
 .filterBy-failedTran {
-    padding: 1rem
+    display: flex;
+    gap: 3rem;
 }
 
 input[type="radio"] {
@@ -72,7 +97,6 @@ input[type="radio"] {
 
 input[type="radio"]+label {
     position: relative;
-    padding-left: 30px;
     cursor: pointer;
     display: inline-block;
     line-height: 25px;
@@ -81,8 +105,8 @@ input[type="radio"]+label {
 input[type="radio"]+label::before {
     content: "";
     position: absolute;
-    left: 0;
-    top: 0;
+    left: -3rem;
+    top: 5px;
     width: 12px;
     height: 12px;
     border-radius: 100%;
@@ -93,15 +117,12 @@ input[type="radio"]+label::before {
 input[type="radio"]:checked+label::after {
     content: "";
     position: absolute;
-    left: 2px;
-    top: 2px;
+    left: -2.9rem;
+    top: 7.5px;
     width: 11px;
     height: 11px;
     border-radius: 100%;
     background: #32E0C4;
-    transform: scale(1);
-    opacity: 1;
-    transition: all .3s ease;
 }
 
 input[type="radio"]:not(:checked)+label::after {
@@ -119,14 +140,7 @@ input[type="radio"]:not(:checked)+label::after {
 
 .apply-filter {
     background: #243344;
-    height: 2rem;
-    margin-bottom: 20px;
-    padding: 8px 8px 10px 10px;
-}
-
-.apply-filter h3,
-.applyFilter-btn {
-    display:inline-block;
+    display: flex
 }
 
 .apply-filter h3 {
@@ -143,7 +157,23 @@ input[type="radio"]:not(:checked)+label::after {
     color: #32E0C4;
     border: 2px solid #32E0C4;
     border-radius: 5px;
-    margin-top: 15px;
+}
+
+.globalFilterForm {
+    text-align: left;
+    color: #243344;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.globalFilterForm>input {
+    width: 25rem
+}
+
+.globalFilterForm>span {
+    margin-left: 15px;
+    font-size: large;
 }
 
 .TransactionsTable {
@@ -151,11 +181,11 @@ input[type="radio"]:not(:checked)+label::after {
     text-align: left;
     font-size: 14px;
     overflow: auto;
+    padding: 0 10px 0 10px;
 }
 
 .TransactionsTable thead tr {
     background: #243344;
-    line-height: 24px;
     color: #EDEEEF;
 }
 
@@ -174,7 +204,6 @@ input[type="radio"]:not(:checked)+label::after {
 
 .TransactionsTableBody td {
     padding: 0.6rem;
-    line-height: 24px;
 }
 
 .transaction-status {
@@ -185,14 +214,11 @@ input[type="radio"]:not(:checked)+label::after {
 }
 
 .TablePagination {
-    margin-top: 1rem;
-    font-size: 12px;
-    color: rgb(144, 142, 142);
-}
-
-.table-pagesIndexing,
-.navigationButtonsContainer {
-    display:inline-block;
+    font-size: 13px;
+    color: rgb(94, 89, 89);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .navigationButtonsContainer {
@@ -216,51 +242,66 @@ input[type="radio"]:not(:checked)+label::after {
 
 .navigationButtonsContainer button:hover,
 .navigationButtonsContainer button:focus {
-    border:0;
+    border: 0;
     text-decoration: none;
     outline: none;
     color: #32e0c4;
 }
 
 /* Media Query */
-@media screen and (max-width: 1040px) {
+@media screen and (max-width: 630px) {
 
-.filterParameters,
-.filterByCategoryOptions  {
-    flex-direction: column;
-    height: 10rem;
-}
+    .filterParameters,
+    .filterByCategoryOptions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 9px;
+    }
 
-.datePickerWrapper {
-    padding-left: 10px;
-}
+    .filterByCategoryOptions>div {
+        gap: 1rem;
+    }
 
-.datePickerLabel {
-    margin-left: 5px;
-}
+    input[type="radio"]+label::before {
+        left: -2.5rem;
+        top: 5px;
+    }
 
-.verticalLine {
-    margin-left: 10px;
-    margin-right: 10px;
-}
+    input[type="radio"]:checked+label::after {
+        left: -2.3rem;
+        top: 7.5px;
+    }
 
-.resetFilter {
-    width: 5rem;
-    margin-left: 10px;
-}
+    /* .datePickerWrapper {
+        padding-left: 10px;
+    }
 
-.resetFilter_icon {
-    cursor: pointer;
-    color: rgb(219, 214, 214);
-    margin-top: 5px;
-}
+    .datePickerLabel {
+        margin-left: 5px;
+    }
 
-.filterBy-RecievedMoney, 
-.filterBy-walletFund, 
-.filterBy-moneySent, 
-.filterBy-pendingTran, 
-.filterBy-failedTran {
-    padding: 5px
-}
+    .verticalLine {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .resetFilter {
+        width: 5rem;
+        margin-left: 10px;
+    }
+
+    .resetFilter_icon {
+        cursor: pointer;
+        color: rgb(219, 214, 214);
+        margin-top: 5px;
+    }
+
+    .filterBy-RecievedMoney,
+    .filterBy-walletFund,
+    .filterBy-moneySent,
+    .filterBy-pendingTran,
+    .filterBy-failedTran {
+        padding: 5px
+    } */
 
 }
