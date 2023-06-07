@@ -39,7 +39,7 @@ export const columns = [
                         switch (cellProps.value) {
                             case "pending":
                                 return (<div className="transaction-status" style={{ background: "yellow" }}></div>);
-                            case "faild":
+                            case "failed":
                                 return (<div className="transaction-status" style={{ background: "red" }}></div>);
                             case "successful":
                                 return (<div className="transaction-status" style={{ background: "green" }}></div>);

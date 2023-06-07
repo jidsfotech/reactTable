@@ -10,7 +10,7 @@ const TablePagination = (props) => {
                     disabled={!props.canPreviousPage}
                 > Previous
                 </button>
-                <ul style={{ display: "flex" }}>
+                <ul style={{ display: "flex", padding:0}}>
                     {
                         props.pageOptions.map((index, page) => {
                             let totalPages = props.pageOptions.length;
