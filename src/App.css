@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .title {
@@ -42,6 +43,7 @@
     border-radius: 10px;
     color: #EDEEEF;
     padding: 1rem;
+    overflow:hidden;
 }
 
 .datePickerWrapper {
@@ -257,7 +259,7 @@ input[type="radio"]:not(:checked)+label::after {
 @media screen and (max-width: 630px) {
     .title {
         width: 88%;
-        font-weight:bold;
+        font-weight: bold;
         font-size: large;
         padding: 8px;
     }
@@ -273,6 +275,25 @@ input[type="radio"]:not(:checked)+label::after {
 
     .filterByCategoryOptions>div {
         gap: 0.5rem;
+    }
+
+    .datepicker-grid-container {
+        overflow: hidden;
+        gap: 0.8rem;
+    }
+
+    .startDate,
+    .endDate {
+        gap: 0.7rem;
+    }
+
+    .startDate > .datePickerLabel,
+    .endDate > .datePickerLabel {
+        font-size: 0.7rem;
+    }
+
+    .verticalLine {
+        width: 2px;
     }
 
     input[type="radio"]+label::before {
